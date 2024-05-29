@@ -1,5 +1,5 @@
-const knex = require('knex');
-const knexConfig = require('../config/knex');
+import knex from "knex";
+import knexConfig from "../config/knex";
 
 let conn;
 
@@ -12,4 +12,4 @@ function conectar() {
   return conn;
 }
 
-module.exports = conectar();
+export default conectar();
