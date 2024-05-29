@@ -8,7 +8,7 @@ router.get("/", async (_, res) => {
   return res.status(200).json({ data });
 });
 
-router.post("/", async (req, res) => {
+router.post("/", async (req: express.Request, res: express.Response) => {
   const data = await store(req.body);
   return res.status(200).json({ data });
 });
