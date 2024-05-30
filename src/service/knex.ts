@@ -1,15 +1,13 @@
-import knex from "knex";
+import knex, { Knex } from "knex";
 import knexConfig from "../config/knex";
 
-let conn:any;
+export class KnexService {
+  private static conn: Knex;
 
-function conectar() {
-  if (conn) {
-    return conn;
-  }
-
-  conn = knex(knexConfig);
-  return conn;
+  obterConexao = () => {
+    if (!KnexService.conn) {
+      KnexService.conn = knex(knexConfig);
+    }
+    return KnexService.conn;
+  };
 }
-
-export default conectar();

@@ -1,15 +1,15 @@
 import * as express from "express";
-import { getAll, store } from "./aluno.model";
+import produtoFactory from "./produto.factory";
 
 const router = express.Router();
 
 router.get("/", async (_, res) => {
-  const data = await getAll();
+  const data = await produtoFactory.getAll();
   return res.status(200).json({ data });
 });
 
-router.post("/", async (req: express.Request, res: express.Response) => {
-  const data = await store(req.body);
+router.post("/", async (req, res) => {
+  const data = await produtoFactory.store(req.body);
   return res.status(200).json({ data });
 });
 
