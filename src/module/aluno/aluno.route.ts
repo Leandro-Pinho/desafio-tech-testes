@@ -19,4 +19,8 @@ router.post("/sum", async (req, res) => {
   return res.status(200).json(response);
 });
 
+router.get('/teste', (_, res)=> {
+  return res.status(200).send('funcionou')
+})
+
 export default router;
