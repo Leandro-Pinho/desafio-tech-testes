@@ -1,16 +1,16 @@
 import * as express from "express";
-import produtoFactory from "./produto.factory";
+import alunoFactory from "./aluno.factory";
 import { sum } from "../../libs/sum";
 
 const router = express.Router();
 
 router.get("/", async (_, res) => {
-  const data = await produtoFactory.getAll();
+  const data = await alunoFactory.getAll();
   return res.status(200).json({ data });
 });
 
 router.post("/", async (req, res) => {
-  const data = await produtoFactory.store(req.body);
+  const data = await alunoFactory.store(req.body);
   return res.status(200).json({ data });
 });
 
