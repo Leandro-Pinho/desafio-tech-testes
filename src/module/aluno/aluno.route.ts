@@ -1,6 +1,6 @@
 import * as express from "express";
 import alunoFactory from "./aluno.factory";
-import { sum } from "../../libs/sum";
+
 
 const router = express.Router();
 

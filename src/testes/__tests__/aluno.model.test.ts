@@ -1,5 +1,5 @@
-import { KnexService } from "../../../service/knex";
-import { Aluno } from "../aluno.model";
+import { KnexService } from "../../service/knex";
+import { Aluno } from "../../module/aluno/aluno.model";
 
 describe("Aluno model Suite", () => {
   it("deve retornar valores do modelo", async () => {
